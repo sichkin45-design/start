@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>50 Чатов Кёльна — без спама</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>body{font-family:Inter,sans-serif}</style></head>
+<body class="bg-[#0a0a0a] text-white">
+<div class="max-w-[780px] mx-auto px-5 py-10">
+<div class="text-center mb-10">
+<a href="../" class="text-zinc-500 text-xs">← Все города Германии</a>
+<div class="inline-block bg-white text-black px-3 py-1 text-xs font-bold rounded-full mt-4 mb-4">ОБНОВЛЕНО: ОКТЯБРЬ 2026 · КЁЛЬНА</div>
+<h1 class="text-[42px] leading-none font-extrabold tracking-tight">50 ЧАТОВ<br>КЁЛЬНА</h1>
+<p class="text-zinc-400 mt-4 text-[15px]">Работа, жилье, помощь в Кёльне.<br>Собрал Сергей Сичкин — Кузница Стартапов · живу в Мюнхене</p>
+<div class="mt-6 flex gap-2 justify-center">
+<a href="https://instagram.com/sichkin.sergei" class="bg-white text-black px-5 py-2.5 rounded-full text-sm font-semibold">Мой Instagram</a>
+<a href="https://t.me/k_roge_n" class="bg-zinc-800 px-5 py-2.5 rounded-full text-sm font-semibold">Кузница</a>
+</div></div>
+<div id="list" class="space-y-8"></div>
+<div class="mt-12 p-6 bg-zinc-900 rounded-2xl border border-zinc-800 text-center">
+<h3 class="font-bold">Хочешь все 50 одним файлом?</h3>
+<p class="text-zinc-400 text-sm mt-1">Напиши в директ слово КЕЛЬН в Instagram</p>
+<a href="https://instagram.com/sichkin.sergei" class="inline-block mt-3 bg-white text-black px-6 py-2 rounded-full font-semibold">Написать</a>
+</div>
+<p class="text-center text-zinc-600 text-xs mt-8">Собрано @sichkin.sergei — Мюнхен 2026</p>
+</div>
+<script>
+const data = [["📢 ГЛАВНОЕ / ОБЩЕНИЕ", [["Кёльна Live", "t.me/koeln_live", "Главный чат Кёльна 10k+"], ["Кёльна Чат RU", "t.me/koeln_chat_ru", "Общение, вопросы"], ["Подслушано Кёльна", "t.me/pods_koeln", "Болталка и помощь"], ["КЁЛЬНА | КЁЛЬНА", "t.me/koeln_ru_chat", "Общий чат без спама"], ["Наш Кёльна", "t.me/nash_koeln_chat", "Ламповый чат"]]], ["🏠 ЖИЛЬЕ", [["Жилье КЕЛЬН", "t.me/KOELN24RU", "Аренда без маклера"], ["WG и Квартиры Кёльна", "t.me/wg_koeln_ru", "Комнаты и WG"], ["Wohnung Кёльна", "t.me/wohnung_koeln", "Долгосрочно"], ["Снять Сдать Кёльна", "t.me/koeln_wohnung_rent", "От собственников"], ["Без маклера Кёльна", "t.me/koeln_ohne_makler", "Прямо от арендодателей"], ["Комнаты Кёльна", "t.me/room_koeln_ru", "Срочно, недорого"]]], ["💼 РАБОТА", [["Работа в Кёльна", "t.me/job_koeln_ru", "Вакансии каждый день"], ["Jobs Кёльна EN", "t.me/koeln_jobs_en", "Англоязычные"], ["IT Jobs Кёльна", "t.me/it_jobs_koeln", "Айти, стартапы"], ["Подработка Кёльна", "t.me/nebenjob_koeln", "Миниджобы"], ["Startup Jobs Кёльна", "t.me/koeln_startup_jobs", "Стартапы"]]], ["🤝 ПОМОЩЬ / КУЗНИЦА", [["Взаимопомощь Кёльна", "t.me/koeln_help_ru", "Помогут с любым вопросом"], ["Мамы Кёльна", "t.me/mamy_koeln", "Дети, школы"], ["Документы Кёльна", "t.me/koeln_dokumente", "Anmeldung, ВНЖ"], ["IT / Стартапы DE", "t.me/it_berlin_startups", "Кузница Стартапов — DE нетворк"], ["Кузница Стартапов", "t.me/k_roge_n", "Мой канал — стартуй в DE"]]]];
+const list = document.getElementById('list');
+data.forEach(([cat,chats])=>{
+  const sec=document.createElement('div');
+  sec.innerHTML=`<h2 class="text-[13px] font-bold tracking-widest text-zinc-400 mb-3">${cat}</h2><div class="grid gap-2"></div>`;
+  const grid=sec.querySelector('div');
+  chats.forEach(([name,link,desc])=>{
+    const a=document.createElement('a');
+    a.href='https://'+link; a.target='_blank';
+    a.className='flex items-center justify-between p-4 bg-zinc-900 border border-zinc-800 rounded-2xl hover:bg-zinc-800 transition';
+    a.innerHTML=`<div><div class="font-semibold text-[15px]">${name}</div><div class="text-[12px] text-zinc-400">${desc}</div><div class="text-[11px] text-zinc-500 mt-1">${link}</div></div><div class="bg-white text-black text-xs font-bold px-3 py-1.5 rounded-full">Открыть</div>`;
+    grid.appendChild(a);
+  });
+  list.appendChild(sec);
+});
+</script></body></html>
